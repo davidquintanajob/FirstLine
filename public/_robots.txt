@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow:
+
+Sitemap: https://diamondbluepoolspabradenton.com/sitemap.xml
