@@ -186,7 +186,7 @@
     </section>
 
     <!-- ========== WHY CHOOSE US (fondo primario) ========== -->
-    <section v-if="false" id="why" class="py-16 md:py-24" style="background-color: var(--color-primary);">
+    <section id="why" class="py-16 md:py-24" style="background-color: var(--color-primary);">
       <div class="container mx-auto px-4">
         <div class="mb-12 text-center" data-aos="fade-up">
           <span class="inline-block rounded-full bg-white/20 px-4 py-1 text-sm font-semibold text-white">
