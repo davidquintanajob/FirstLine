@@ -212,7 +212,7 @@
     </section>
 
     <!-- ========== NUESTRO TRABAJO (fondo claro) ========== -->
-    <section v-if="false" id="work" class="py-16 md:py-24">
+    <section id="work" class="py-16 md:py-24">
       <div class="container mx-auto px-4">
         <div class="mb-12 text-center" data-aos="fade-up">
           <span
@@ -238,7 +238,7 @@
     </section>
 
     <!-- ========== MAPA DE SERVICIO (fondo claro) ========== -->
-    <section v-if="false" id="map" class="py-16 md:py-24">
+    <section id="map" class="py-16 md:py-24">
       <div class="container mx-auto px-4">
         <div class="mb-12 text-center" data-aos="fade-up">
           <span
@@ -658,23 +658,49 @@ const whySteps = computed(() => {
   return steps[locale.value]
 })
 
-// ---------- WORK ITEMS CON IMÁGENES ----------
+// ---------- WORK ITEMS CON IMÁGENES (actualizado) ----------
+// Lista completa de imágenes de la carpeta /work (según el listado proporcionado)
 const workImages = [
-  '/work/1.jpg',
-  '/work/2.webp',
+  '/work/10.jpeg',
+  '/work/11.jpeg',
+  '/work/12.jpeg',
+  '/work/3.jpeg',
   '/work/3.jpg',
-  '/work/4.jpg'
+  '/work/4.jpg',
+  '/work/4.jpeg',
+  '/work/5.jpeg',
+  '/work/6.jpeg',
+  '/work/7.jpeg',
+  '/work/8.jpeg',
+  '/work/9.jpeg'
 ]
 
+// Títulos para cada idioma (6 títulos, se repetirán cíclicamente)
+const workTitles = {
+  en: [
+    'Residential Wiring',
+    'Pool Installation',
+    'Generator Setup',
+    'Panel Upgrade',
+    'Outdoor Lighting',
+    'Commercial Project'
+  ],
+  es: [
+    'Cableado Residencial',
+    'Instalación de Piscina',
+    'Montaje de Generador',
+    'Actualización de Tablero',
+    'Iluminación Exterior',
+    'Proyecto Comercial'
+  ]
+}
+
+// Construimos los items combinando imágenes y títulos (cíclicos)
 const workItems = computed(() => {
-  const titles = {
-    en: ['Residential Wiring', 'Pool Installation', 'Generator Setup', 'Panel Upgrade', 'Outdoor Lighting', 'Commercial Project'],
-    es: ['Cableado Residencial', 'Instalación de Piscina', 'Montaje de Generador', 'Actualización de Tablero', 'Iluminación Exterior', 'Proyecto Comercial']
-  }
-  const currentTitles = titles[locale.value]
-  return currentTitles.map((title, index) => ({
-    title,
-    image: workImages[index % workImages.length]
+  const titles = workTitles[locale.value]
+  return workImages.map((image, index) => ({
+    image,
+    title: titles[index % titles.length]
   }))
 })
 
